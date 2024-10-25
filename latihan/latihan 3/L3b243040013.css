@@ -6,11 +6,20 @@ h1 {
   font-family: comic sans ms;
   font-size: 60px;
   color: darkblue;
+  text-align: center;
+}
+h3 a {
+  color: aliceblue;
 }
 h4 {
   text-align: right;
   font-style: italic;
 }
-p {
-  text-align: justify;
+.p1 {
+  text-align: center;
+  color: orange;
+}
+.p2 {
+  text-align: center;
+  line-height: 2rem;
 }
