@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* style */
+@font-face {
+  font-family: "BebasNeue";
+  src: url(../latihan5/Gallery/fonts/bebasneue/BebasNeue-Regular.woff);
+}
+body {
+  font: 18px/36px "BebasNeue", "arial narrow", "arial", "sans-serif";
+  background-color: #ddd;
+  background-image: url(../latihan5/Gallery/img/bg1.jpg);
+}
+h1 {
+  font-size: 80px;
+  margin: 50px 0;
+  text-align: center;
+  text-shadow: 1px 1px 2px white;
+}
+.container {
+  width: 600px;
+  background-color: rgb(253, 249, 249);
+  margin: auto;
+  padding: 30px;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.mobile {
+  align-items: center;
+  text-align: center;
+}
+
+.container1 {
+  margin-top: 80px;
+  align-content: center;
+  width: 80px;
+}
+
+.galery {
+  margin: auto;
+}
+
+.galery li {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  border: 5px solid #666;
+  float: left;
+  position: relative;
+  margin-bottom: 30px;
+  margin: 0 5px;
+}
+.galery li a img,
+.galery li,
+.galery li span {
+  border-radius: 50%;
+}
+.galery li span {
+  display: block;
+  width: 120px;
+  position: absolute;
+  top: 0;
+  height: 120px;
+  background-color: rgba(200, 200, 200, 0, 5);
+  text-align: center;
+  line-height: 120px;
+  color: #333;
+  text-shadow: 1px 1px 1px #ddd;
+  opacity: 0;
+  transform: scale(0) rotate(0);
+  transition: 0.3s;
+}
+
+.galery li a:hover span {
+  opacity: 1;
+  transform: scale(1) rotate(360deg);
+}
+
+.clear {
+  clear: both;
+}
+
+/* overlay */
+.overlay {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 999;
+  transition: 0.8s;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.overlay:target {
+  width: auto;
+  height: auto;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.overlay img {
+  max-height: 100%;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.overlay:target img {
+  animation: zoomDanFade 2s;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -20px;
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  border: 1px solid white;
+  line-height: 14px;
+  padding: 5px;
+  opacity: 1;
+}
+
+.overlay:target .close {
+  animation: slidedowmfade 0.5s 0.5s forwards;
+}
+
+.overlay:target .next,
+.overlay:target .prev {
+  animation: fadeAjah 0.5 0.5 forwards;
+}
+
+/* navigasi */
+.next,
+.prev {
+  width: 100px;
+  height: 118px;
+  background-image: url(../latihan5/Gallery/img/kanan1.png);
+  position: absolute;
+  text-indent: -9999px;
+  top: 40%;
+  margin-left: 50px;
+  opacity: 1;
+}
+
+.prev {
+  background-image: url(../latihan5/Gallery/img/kiri1.png);
+  margin-left: -140px;
+}
+
+/* animasi */
+@keyframes fadeAjah {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomDanFade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    margin-top: -20px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+
+.fany1 {
+  width: 90%;
+  margin: auto;
+  color: rgb(245, 244, 242);
+  margin-top: 90px;
+
+}
+.fany1 img {
+  float: left;
+  border-radius: 20%;
+  margin-right: 15px;
+}
+
+.fany1 p {
+  margin-bottom: 40px;
+}
+
+nav {
+  display: inline;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+nav ul li {
+  display: inline-block;
+  padding-right: 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #f7f4f4;
+  font-size: 1.3rem;
+  margin: 0 3px;
+  padding: 5px 5px;
+}
