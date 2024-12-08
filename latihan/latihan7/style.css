@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: #ddd;
+  font-size: 18px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+
+/* Container */
+.container {
+  display: grid;
+  gap: 10px;
+}
+
+/* Header */
+.header {
+  display: grid;
+  grid-template-areas:
+    "hero hero feature-1"
+    "hero hero feature-2";
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 300px;
+  background-image: url(img1.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+}
+
+.hero > * {
+  display: none;
+}
+
+.features {
+  background-color: black;
+  color: white;
+  display: grid;
+  /* justify-content: center;
+    align-content: center ; */
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.feature-1 {
+  grid-area: feature-1;
+  background-image: url(img2.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.feature-2 {
+  grid-area: feature-2;
+  background-image: url(img3.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.features .PRICE {
+  font-size: 3em;
+  font-weight: 200;
+}
+
+/* Navigation */
+.MENU {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.MENU Brand {
+  font-size: 1.3em;
+  color: #333;
+}
+
+.MENU ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+}
+
+.MENU a {
+  display: block;
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -5px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* animasi hamburger */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg);
+  transform: translate(-1px -1px);
+  background-color: #fffefb;
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg);
+  transform: translate(-1px 0);
+  background-color: #fffefb;
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* Services */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.service {
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.service .icon {
+  font-size: 3em;
+}
+
+.service h3 {
+  font-size: 1.5em;
+}
+
+.service p {
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery h2 {
+  /* grid-column-start: 1;
+  grid-column-end: -1; */
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 1024px) {
+  .MENU {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+
+  .MENU .Brand {
+    display: none;
+  }
+
+  .hero > * {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  .hero {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .MENU {
+    order: -1;
+    justify-items: end;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+  .MENU ul {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    background-color: rgba(7, 5, 0, 0.49);
+    backdrop-filter: blur(4px);
+    top: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: all 1.3s;
+    opacity: 0;
+  }
+  nav ul li a {
+    margin-top: 20px;
+    color: #fbf1d8;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .MENU ul.slide {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 15px;
+  }
+  .header {
+    grid-template-areas:
+      "hero"
+      "feature-1"
+      "feature-2";
+  }
+}

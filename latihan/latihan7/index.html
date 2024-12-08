@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERR SHOES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="hero">
+          <h2 class="heading">ERR SHOES SHOP</h2>
+          <p class="sub-heading">ALL SHOES</p>
+        </div>
+        <div class="features feature-1">
+          <h4 class="PRICE">IDR 500K</h4>
+          <p class="item">SHOES</p>
+        </div>
+        <div class="features feature-2">
+          <h4 class="PRICE">IDR 700K</h4>
+          <p class="ITEM">SHOES</p>
+        </div>
+      </header>
+      <nav class="MENU">
+        <div class="menu-toggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="Brand">
+          <h1>ERR SHOES</h1>
+        </div>
+        <ul class="Menu-List">
+          <li><a href="">HOME</a></li>
+          <li><a href="">PRODUCT</a></li>
+          <li><a href="">ABOUT</a></li>
+          <li><a href="">GALLERY</a></li>
+        </ul>
+      </nav>
+
+      <section class="services">
+        <div class="service">
+          <div class="icon">🥷🏻</div>
+          <h3>About Me</h3>
+          <p>My name is Erik Adia Meka, I am the owner of this shoe shop.</p>
+        </div>
+        <div class="service">
+          <div class="icon">🛕</div>
+          <h3>About My Store</h3>
+          <p>
+            This shop was built on April 23 2023, and has been around for about
+            1 year, I as the owner of this shoe shop want to sell cool and
+            contemporary shoes, Happy Shopping.
+          </p>
+        </div>
+        <div class="service">
+          <div class="icon">📍</div>
+          <h3>Shoe Store Address</h3>
+          <p>
+            Pilangsari Village, Jatitujuh District, Majalengka Regency, RT:21
+            RW:23 ERR SHOES
+          </p>
+        </div>
+        <div class="service">
+          <div class="icon">👞</div>
+          <h3>Shoes</h3>
+          <p>
+            We sell a lot of various kinds of shoes ranging from: -adidas -Nike
+            -converse -new balance -and others
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2>Gallery</h2>
+        <img src="sepatu6.jpg" alt="" />
+        <img src="sepatu2.jpg" alt="" />
+        <img src="sepatu3.jpg" alt="" />
+        <img src="sepatu4.jpg" alt="" />
+
+        <img src="se.jpg" alt="" />
+      </section>
+    </div>
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle input");
+      const nav = document.querySelector("nav ul");
+
+      menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("slide");
+      });
+    </script>
+  </body>
+</html>
